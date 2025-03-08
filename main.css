@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+section {
+    padding: 7em 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+.split {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.split > * {
+    flex-basis: 30%;
+    min-width: 15em;
+}
+
+.spacing > * + * {
+    margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-text, #eee);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.125em;
+    padding: .5em 1.2em;
+    background: var(--clr-accent, #3c6a9c);
+    border-radius: .25em;
+    transition: 
+        transform 250ms ease-in-out,
+        opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.1);
+    opacity: .9;
+}
+
+.primary-title {
+    font-size: 4rem;
+    font-size: clamp(3rem, 5vw + 1rem, 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    mix-blend-mode: difference;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+    line-height: 1;
+    color: #ffffff;
+    mix-blend-mode: difference;
+    margin-bottom: 5rem;
+}
+
+.hero {
+    color: #eee;
+    text-align: center;
+    padding: 15em 0;
+    background: #3c6a9c;
+}
+
+@supports (background-blend-mode: multiply) {
+    .hero {
+        background: url(img/tour-1.jpg),
+        radial-gradient(circle at bottom, #376d9f, #0b425e);
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+.featured {
+    background: url(img/tour-3.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.featured_item {
+    display: block;
+    position: relative;
+    transform: scale(.85);
+    transition: transform 250ms ease-in-out;
+    text-decoration: none;
+    color: #eee;
+    text-align: center;
+    line-height: 1.2;
+    
+}
+
+.featured_details {
+    span {
+        display: block;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    opacity: 0.8;
+    mix-blend-mode: difference;
+    
+}
+
+.featured_image {
+    border-radius: 2em;
+}
+
+.featured_item:hover,
+.featured_item:focus {
+    transform: scale(1);
+}
+
+.featured_item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 100% 100% 0 0;
+    border-radius: 2em;
+    border: 5em;
+    background: #0b425e;
+    z-index: -1;
+    opacity: .85;
+}
+
+.featured_item:hover .featured_details,
+.featured_item:focus .featured_details {
+    opacity: 1;
+    mix-blend-mode: normal;
+    text-shadow: 0 0 2em rgba(#fff, #fff, #fff, 1)
+}
+
+.our-products {
+    padding: 15em 0;
+    background: #3c6a9c;
+}
+
+@supports (background-blend-mode: multiply) {
+    .our-products {
+        background: url(img/tour-4.jpg);
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+.product {
+    background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+    padding: 3em;
+    border-radius: 1em;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.product_title {
+    font-size: clamp(3rem, 5vw + 1rem, 5.5rem);
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 0 .2em rgba(#000, #000, #000, .2);
+}
+
+@media (min-width:45em) {
+
+    .product {
+        text-align: left;
+    }
+
+    .product_image {
+        float: right;
+        width: 65%;
+    }
+}
+
+.product_image {
+    margin: -5em 0 0 0;
+    border-radius: 2em;
+}
+
+.tour-4 {
+    --clr-inner: #dbba94;
+    --clr-outer: #60839a;
+    --clr-accent: #9e6c32;
+}
+.tour-5 {
+    --clr-inner: #1fa3cd; 
+    --clr-outer: #001421;
+    --clr-accent: #fe1207;
+}
+.tour-6 {
+    --clr-inner: #c6d1c3;
+    --clr-outer: #5e5c54;
+    --clr-accent: #b9a593;
+}
